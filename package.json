@@ -1,0 +1,144 @@
+{
+  "name": "truwrap-cli",
+  "version": "0.0.1",
+  "description": "Smarter terminal text wrapping CLI tools (handles 24bit color)",
+  "author": "Mark Griffiths <mark@thebespokepixel.com> (http://thebespokepixel.com/)",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "truwrap": "./truwrap.js"
+  },
+  "files": [
+    "index.js",
+    "media"
+  ],
+  "bugs": {
+    "url": "https://github.com/thebespokepixel/truwrap-cli/issues"
+  },
+  "copyright": {
+    "year": "2021",
+    "owner": "The Bespoke Pixel"
+  },
+  "scripts": {
+    "build": "rollup -c && chmod 755 truwrap.js && npm run readme",
+    "test": "xo && c8 --reporter=text ava --timeout 2m",
+    "doc-build": "echo 'skipping docs...'",
+    "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
+    "coverage": "c8 --reporter=lcov ava --timeout 2m; open coverage/lcov-report/index.html",
+    "generate-tests": "scripts/generate-tests && ava --timeout 2m"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/estree": "^0.0.50",
+    "ava": "^4.0.0-rc.1",
+    "c8": "^7.10.0",
+    "documentation-theme-bespoke": "^2.0.12",
+    "rollup": "^2.59.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "xo": "^0.46.3"
+  },
+  "dependencies": {
+    "@thebespokepixel/meta": "^3.0.4",
+    "@thebespokepixel/string": "^2.0.1",
+    "common-tags": "^1.8.0",
+    "get-stdin": "^9.0.0",
+    "lodash": "^4.17.21",
+    "os-locale": "^6.0.1",
+    "read-pkg": "^7.0.0",
+    "read-pkg-up": "^9.0.0",
+    "term-ng": "^3.0.3",
+    "trucolor": "^2.0.4",
+    "truwrap": "^4.0.0",
+    "update-notifier": "^5.1.0",
+    "verbosity": "^3.0.2",
+    "yargs": "^17.2.1"
+  },
+  "engines": {
+    "node": ">=14.0"
+  },
+  "homepage": "https://github.com/thebespokepixel/truwrap-cli",
+  "keywords": [
+    "text",
+    "wrap",
+    "terminal",
+    "tty",
+    "iTerm",
+    "xterm",
+    "24bit",
+    "SGR",
+    "ansi"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebespokepixel/truwrap-cli.git"
+  },
+  "xo": {
+    "semicolon": false,
+    "esnext": true,
+    "ignores": [
+      "index.js",
+      "truwrap.js",
+      "docs/**",
+      "coverage/**"
+    ]
+  },
+  "badges": {
+    "github": "thebespokepixel",
+    "npm": "thebespokepixel",
+    "libraries-io": "TheBespokePixel",
+    "name": "truwrap-cli",
+    "codeclimate": "5732d1aad01d74b6ef4a",
+    "providers": {
+      "aux1": {
+        "title": "github",
+        "text": "source",
+        "color": "4E73B6",
+        "link": "https://github.com/thebespokepixel/truwrap-cli"
+      }
+    },
+    "readme": {
+      "Publishing Status": [
+        [
+          "npm",
+          "libraries-io-npm"
+        ],
+        [
+          "travis-com",
+          "rollup"
+        ]
+      ],
+      "Development Status": [
+        [
+          "travis-com-dev",
+          "libraries-io-github"
+        ],
+        [
+          "snyk",
+          "code-climate",
+          "code-climate-coverage"
+        ]
+      ],
+      "Documentation/Help": [
+        "inch",
+        "twitter"
+      ]
+    },
+    "docs": [
+      [
+        "aux1",
+        "travis"
+      ],
+      [
+        "code-climate",
+        "code-climate-coverage"
+      ],
+      [
+        "snyk",
+        "libraries-io-npm"
+      ]
+    ]
+  }
+}

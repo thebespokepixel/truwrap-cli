@@ -1,0 +1,29 @@
+---
+branches:
+  only:
+    - master
+    - develop
+    - /^feature/.*$/
+language: node_js
+node_js:
+  - stable
+  - "--lts"
+env:
+  global:
+    - CC_TEST_REPORTER_ID=ba42fc27c58fe141f19793fa5acb42d4d229da491a4c7a1568ba50a69a009e1f
+before_install:
+  - npm i -g npm
+install: npm ci --no-optional
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+after_script:
+  - "[ $TRAVIS_NODE_VERSION = stable ] && c8 report --reporter=lcov --reporter=text && ./cc-test-reporter
+    after-build --debug -t lcov --exit-code $TRAVIS_TEST_RESULT || echo 'Coverage skipped'"
+notifications:
+  slack:
+    secure: b30+M8/fYAvUaYwnjMRVgpf63V84HkaMHO6j/RSE8vCyPLF0kxJYlc1lsemGfR1czvEUxNz+IIvDhbdLdkeF7Fpdq2gLBa4MTEpBuzKGtwqC9Tup3u0hg1haNd0oGmMSextH4e2wvdaFXK+rIYebAYhNoP5qeW6OqtyqNVblL7I=
+cache:
+  directories:
+    - "$HOME/.npm"
