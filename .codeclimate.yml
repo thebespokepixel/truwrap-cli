@@ -22,6 +22,5 @@ exclude_paths:
 - docs/
 - media/
 - scripts/
-- index.js
-- index.d.ts
+- truwrap.js
 
