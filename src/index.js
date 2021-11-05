@@ -2,8 +2,9 @@
  │ truwrap CLI │
  ╰─────────────┴─────────────────────────────────────────────────────────────── */
 
-import {format} from 'util'
-
+import {format} from 'node:util'
+import {join, dirname} from 'node:path'
+import {fileURLToPath} from 'node:url'
 import yargs from 'yargs'
 import {hideBin} from 'yargs/helpers' // eslint-disable-line node/file-extension-in-import
 import getStdin from 'get-stdin'
@@ -12,10 +13,10 @@ import {stripIndent} from 'common-tags'
 import {box} from '@thebespokepixel/string'
 import {createConsole} from 'verbosity'
 import {readPackageSync} from 'read-pkg'
-import {colorReplacer} from '../lib/colour'
 import meta from '@thebespokepixel/meta'
-import help from './lib/help.js'
 import {truwrap, parsePanel} from 'truwrap'
+import {colorReplacer} from './lib/colour.js'
+import help from './lib/help.js'
 
 export const console = createConsole({outStream: process.stderr})
 export const metadata = meta(dirname(fileURLToPath(import.meta.url)))
