@@ -1,6 +1,6 @@
 {
   "name": "truwrap-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Smarter terminal text wrapping CLI tools (handles 24bit color)",
   "author": "Mark Griffiths <mark@thebespokepixel.com> (http://thebespokepixel.com/)",
   "main": "index.js",
