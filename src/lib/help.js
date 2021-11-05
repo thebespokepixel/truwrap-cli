@@ -8,9 +8,9 @@ import {join, dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import terminalFeatures from 'term-ng'
 import {stripIndent} from 'common-tags'
-
-import {clr, colorReplacer} from '../lib/colour.js'
-import {truwrap, metadata, createImage} from 'truwrap'
+import {truwrap, createImage} from 'truwrap'
+import {metadata} from '../index.js'
+import {clr, colorReplacer} from './colour.js'
 
 const images = (function () {
 	if (terminalFeatures.images) {

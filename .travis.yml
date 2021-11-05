@@ -10,7 +10,7 @@ node_js:
   - "--lts"
 env:
   global:
-    - CC_TEST_REPORTER_ID=ba42fc27c58fe141f19793fa5acb42d4d229da491a4c7a1568ba50a69a009e1f
+    - CC_TEST_REPORTER_ID=befeb34a9714af8afb3654dc704daf3fb01c582f975ae9803ca17e7e2097b3df
 before_install:
   - npm i -g npm
 install: npm ci --no-optional
