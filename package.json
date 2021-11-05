@@ -9,7 +9,6 @@
     "truwrap": "./truwrap.js"
   },
   "files": [
-    "index.js",
     "media"
   ],
   "bugs": {
@@ -77,7 +76,6 @@
     "semicolon": false,
     "esnext": true,
     "ignores": [
-      "index.js",
       "truwrap.js",
       "docs/**",
       "coverage/**"

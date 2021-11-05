@@ -1,9 +1,10 @@
 /* ────────────╮
  │ truwrap CLI │
  ╰─────────────┴─────────────────────────────────────────────────────────────── */
+/* eslint unicorn/no-process-exit:0, node/prefer-global/process: [error] */
 
 import {format} from 'node:util'
-import {join, dirname} from 'node:path'
+import {dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import yargs from 'yargs'
 import {hideBin} from 'yargs/helpers' // eslint-disable-line node/file-extension-in-import
@@ -30,85 +31,85 @@ const yargsInstance = yargs(hideBin(process.argv))
 	.options({
 		h: {
 			alias: 'help',
-			describe: 'Display this help.'
+			describe: 'Display this help.',
 		},
 		v: {
 			alias: 'version',
 			count: true,
-			describe: 'Return the current version on stdout. -vv Return name & version.'
+			describe: 'Return the current version on stdout. -vv Return name & version.',
 		},
 		V: {
 			alias: 'verbose',
 			count: true,
-			describe: 'Be verbose. -VV Be loquacious.'
+			describe: 'Be verbose. -VV Be loquacious.',
 		},
 		o: {
 			alias: 'stderr',
 			boolean: true,
 			describe: 'Use stderr rather than stdout',
-			default: false
+			default: false,
 		},
 		l: {
 			alias: 'left',
 			describe: 'Left margin',
 			requiresArg: true,
-			default: 2
+			default: 2,
 		},
 		r: {
 			alias: 'right',
 			describe: 'Right margin',
 			requiresArg: true,
-			default: 2
+			default: 2,
 		},
 		w: {
 			alias: 'width',
 			describe: 'Set total width. Overrides terminal window’s width.',
 			requiresArg: true,
-			nargs: 1
+			nargs: 1,
 		},
 		t: {
 			alias: 'tab',
 			describe: 'Set tab width.',
 			requiresArg: true,
-			default: 2
+			default: 2,
 		},
 		m: {
 			alias: 'mode',
 			choices: ['hard', 'soft', 'keep', 'container'],
 			describe: 'Wrapping mode',
 			default: 'soft',
-			requiresArg: true
+			requiresArg: true,
 		},
 		s: {
 			alias: 'stamp',
 			boolean: true,
-			describe: 'Print arguments rather than stdin. printf-style options supported.'
+			describe: 'Print arguments rather than stdin. printf-style options supported.',
 		},
 		p: {
 			alias: 'panel',
 			boolean: true,
-			describe: 'Render a tabular panel into the available console width.'
+			describe: 'Render a tabular panel into the available console width.',
 		},
 		c: {
 			alias: 'truncate',
 			boolean: true,
-			describe: 'Truncate panel cells.'
+			describe: 'Truncate panel cells.',
 		},
 		d: {
 			alias: 'delimiter',
 			describe: 'The column delimiter when reading data for a panel.',
 			requiresArg: true,
-			default: '|'
+			default: '|',
 		},
 		x: {
 			alias: 'regex',
 			describe: 'Character run selection regex.',
-			requiresArg: true
+			requiresArg: true,
 		},
 		color: {
-			describe: 'Force color depth --color=256|16m. Disable with --no-color'
-		}
-	}).showHelpOnFail(false, `Use 'truwrap --help' for help.`)
+			describe: 'Force color depth --color=256|16m. Disable with --no-color',
+		},
+	}).showHelpOnFail(false, 'Use \'truwrap --help\' for help.')
 
 const {argv} = yargsInstance
 
@@ -124,14 +125,14 @@ if (argv.verbose) {
 		borderColor: 'green',
 		margin: {
 			bottom: 1,
-			top: 1
+			top: 1,
 		},
 		padding: {
 			bottom: 0,
 			top: 0,
 			left: 2,
-			right: 2
-		}
+			right: 2,
+		},
 	}
 
 	const titling = mode => stripIndent(colorReplacer)`
@@ -168,7 +169,7 @@ if (argv.help) {
 		right: argv.right,
 		mode: argv.mode,
 		tabWidth: argv.tab,
-		outStream
+		outStream,
 	}
 
 	if (argv.regex) {
@@ -191,7 +192,7 @@ if (argv.help) {
 					maxLineWidth: renderer.getWidth(),
 					showHeaders: false,
 					truncate: argv.truncate,
-					config: panel.configuration
+					config: panel.configuration,
 				})
 			} else {
 				renderer.write(input)

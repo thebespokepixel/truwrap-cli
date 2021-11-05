@@ -85,4 +85,4 @@ For advanced 24bit colour handling see [thebespokepixel/trucolor](https://github
 Full documentation can be found at [https://thebespokepixel.github.io/truwrap/][1]
 
 [1]: https://thebespokepixel.github.io/truwrap/
-[grab]: https://raw.githubusercontent.com/thebespokepixel/truwrap-cli/master/media/truwrap.png
+[grab]: https://raw.githubusercontent.com/thebespokepixel/truwrap-cli/develop/media/truwrap.png
