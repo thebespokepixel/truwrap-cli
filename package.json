@@ -1,9 +1,9 @@
 {
   "name": "truwrap-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smarter terminal text wrapping CLI tools (handles 24bit color)",
   "author": "Mark Griffiths <mark@thebespokepixel.com> (http://thebespokepixel.com/)",
-  "main": "index.js",
+  "main": "truwrap.js",
   "type": "module",
   "bin": {
     "truwrap": "./truwrap.js"
@@ -20,11 +20,11 @@
   },
   "scripts": {
     "build": "rollup -c && chmod 755 truwrap.js && npm run readme",
-    "test": "xo && c8 --reporter=text ava --timeout 2m",
+    "test": "xo && c8 --reporter=text ava",
     "doc-build": "echo 'skipping docs...'",
     "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
-    "coverage": "c8 --reporter=lcov ava --timeout 2m; open coverage/lcov-report/index.html",
-    "generate-tests": "scripts/generate-tests && ava --timeout 2m"
+    "coverage": "c8 --reporter=lcov ava; open coverage/lcov-report/index.html",
+    "generate-tests": "scripts/generate-tests && ava"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -46,8 +46,8 @@
     "lodash": "^4.17.21",
     "read-pkg": "^7.0.0",
     "term-ng": "^3.0.3",
-    "trucolor": "^2.0.4",
-    "truwrap": "^4.0.2",
+    "trucolor": "^4.0.3",
+    "truwrap": "^4.0.3",
     "update-notifier": "^5.1.0",
     "verbosity": "^3.0.2",
     "yargs": "^17.2.1"
