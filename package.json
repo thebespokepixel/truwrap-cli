@@ -48,7 +48,7 @@
     "term-ng": "^3.0.3",
     "trucolor": "^4.0.3",
     "truwrap": "^4.0.3",
-    "update-notifier": "^5.1.0",
+    "update-notifier": "^6.0.0",
     "verbosity": "^3.0.2",
     "yargs": "^17.2.1"
   },
