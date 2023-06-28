@@ -45,7 +45,7 @@
     "get-stdin": "^9.0.0",
     "lodash": "^4.17.21",
     "read-pkg": "^7.0.0",
-    "term-ng": "^3.0.3",
+    "term-ng": "^3.0.4",
     "trucolor": "^4.0.3",
     "truwrap": "^4.0.3",
     "update-notifier": "^5.1.0",
